@@ -1,0 +1,33 @@
+{
+	"name": "llamaserver-tuning",
+	"version": "1",
+	"description": "A helpful extension for http://llamaserver.net/ to track your games easily!",
+	"author": "Kiril Dolashkov (jedinja)",
+
+	"browser_action": {
+		"default_icon": "llamaserver-tuning.png"
+	},
+	"background": {
+		"scripts": [
+			"background.js"
+		],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"js": [
+				"content.js"
+			],
+			"matches": [
+				"http://llamaserver.net/"
+			],
+			"all_frames": true,
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+		"tabs",
+		"storage"
+	],
+	"manifest_version": 2
+}
